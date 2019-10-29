@@ -1,4 +1,4 @@
-import { IControl } from '@/components/simple-timeline-control.model';
+import {IControl} from '@/components/simple-timeline-control.model';
 
 export const enum Status {
   PRIMARY = 'primary',
