@@ -22,7 +22,4 @@ export default class SimpleTimeline extends Vue {
   @Prop({ default: 'DD/MM/YY' })
   public dateFormat!: string;
 
-  public deleteItem() {
-    return true;
-  }
 }

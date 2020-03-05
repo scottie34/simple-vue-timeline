@@ -10,7 +10,6 @@ export default class SimpleTimelineControl extends Vue {
   public eventId!: number;
 
   public handleClick() {
-    //console.log('handleClick ' + this.control.method + ' ' + this.eventId);
-    this.$parent["$parent"].$emit('timeline-' + this.control.method, { eventId: this.eventId });
+    this.$parent.$emit('timeline-' + this.control.method, { eventId: this.eventId });
   }
 }

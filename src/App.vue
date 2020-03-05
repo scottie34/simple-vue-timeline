@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <timeline :items="items"></timeline>
+    <timeline :items="items" @timeline-edit="edit" @timeline-copy="copy" @timeline-trash="trash" v-on="$listeners"></timeline>
   </div>
 </template>
 
@@ -23,22 +23,36 @@ export default class App extends Vue {
       'calendar-alt',
       Status.WARNING,
       'title',
-      [new Control('edit', 'pencil-alt'), new Control('edit2', 'pencil-alt')],
+      [new Control('edit', 'pencil-alt'), new Control('copy', 'plus')],
       new Date(),
-      'body'
+      'Here is the body message of item 0'
     ),
     new Item(
       1,
       'calendar-alt',
       Status.DANGER,
       'title',
-      [],
+      [new Control('edit', 'pencil-alt'), new Control('trash', 'trash')],
       new Date(),
-      'thissssssssssssssssssssssssssssssssssssssssssss' +
-        'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss' +
-        'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss'
+      'Here is the body message of item 1'
     )
   ];
+
+  public edit(e: any) {
+    console.log('edit ' + e['eventId']);
+  }
+
+  public copy(e: any) {
+    console.log('copy ' + e['eventId']);
+    let item: Item = <Item>this.items.find(item => item.id == e['eventId']);
+    let clone = new Item(this.items.length, item.icon, item.status, item.title, item.controls, item.createdDate, item.body);
+    this.items.push(clone);
+  }
+
+  public trash(e: any) {
+    console.log('trash ' + e['eventId']);
+    this.items.pop();
+  }
 }
 </script>
 
