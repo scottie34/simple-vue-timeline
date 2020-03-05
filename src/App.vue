@@ -44,7 +44,7 @@ export default class App extends Vue {
 
   public copy(e: any) {
     console.log('copy ' + e['eventId']);
-    let item: Item = <Item>this.items.find(item => item.id == e['eventId']);
+    let item: Item = this.items.find(item => item.id == e['eventId']) as Item;
     let clone = new Item(this.items.length, item.icon, item.status, item.title, item.controls, item.createdDate, item.body);
     this.items.push(clone);
   }
