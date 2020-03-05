@@ -1,7 +1,6 @@
-import {BadgePlugin, ButtonPlugin, CardPlugin, LayoutPlugin} from 'bootstrap-vue';
+import { BadgePlugin, ButtonPlugin, CardPlugin, LayoutPlugin } from 'bootstrap-vue';
 
-// @ts-ignore
-export function initBootstrapVue(vue) {
+export function initBootstrapVue({ vue }: { vue: any }) {
   vue.use(BadgePlugin);
   vue.use(ButtonPlugin);
   vue.use(CardPlugin);

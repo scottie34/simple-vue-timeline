@@ -1,8 +1,9 @@
-export interface IControl {
-  method?: string;
-  icon?: string;
-}
+export class Control {
+  method?: string | undefined;
+  icon?: string | undefined;
 
-export class Control implements IControl {
-  constructor(public method?: string, public icon?: string) {}
+  constructor(method?: string | undefined, icon?: string | undefined) {
+    this.method = method;
+    this.icon = icon;
+  }
 }

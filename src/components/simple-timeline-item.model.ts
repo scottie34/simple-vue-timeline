@@ -1,31 +1,30 @@
-import {IControl} from '@/components/simple-timeline-control.model';
+import { Control } from './simple-timeline-control.model';
+import { Status } from './simple-timeline-status.model';
 
-export const enum Status {
-  PRIMARY = 'primary',
-  SUCCESS = 'success',
-  WARNING = 'warning',
-  DANGER = 'danger',
-  INFO = 'info'
-}
+export class Item {
+  id?: number | undefined;
+  icon?: string | undefined;
+  status?: Status | undefined;
+  title?: string | undefined;
+  controls?: Control[] | undefined;
+  createdDate?: Date | undefined;
+  body?: string | undefined;
 
-export interface IItem {
-  id?: number;
-  icon?: string;
-  status?: Status;
-  title?: string;
-  controls?: IControl[];
-  createdDate?: Date;
-  body?: string;
-}
-
-export class Item implements IItem {
   constructor(
-    public id?: number,
-    public icon?: string,
-    public status?: Status,
-    public title?: string,
-    public controls?: IControl[],
-    public createdDate?: Date,
-    public body?: string
-  ) {}
+    id?: number | undefined,
+    icon?: string | undefined,
+    status?: Status | undefined,
+    title?: string | undefined,
+    controls?: Control[] | undefined,
+    createdDate?: Date | undefined,
+    body?: string | undefined
+  ) {
+    this.id = id;
+    this.icon = icon;
+    this.status = status;
+    this.title = title;
+    this.controls = controls;
+    this.createdDate = createdDate;
+    this.body = body;
+  }
 }

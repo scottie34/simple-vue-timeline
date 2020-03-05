@@ -1,8 +1,13 @@
 # simple-vue-timeline
 
+A timeline vue component which leverages the use of common libraries:
+ * [bootstrap vue components](https://bootstrap-vue.js.org/),
+ * [font-awesome icons](https://fontawesome.com/) 
+ * and [momentjs](https://fontawesome.com/) date format.
+   
 ## Project setup
 ```
-npm install
+npm install --save simple-vue-timeline
 ```
 
 ### Compiles and hot-reloads for development

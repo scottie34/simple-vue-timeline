@@ -5,18 +5,19 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import SimpleTimeline from '@/components/SimpleTimeline.vue';
-  import {IItem, Item, Status} from '@/components/simple-timeline-item.model';
-  import {Control} from '@/components/simple-timeline-control.model';
+import { Component, Vue } from 'vue-property-decorator';
+import SimpleTimeline from '@/components/SimpleTimeline.vue';
+import { Status } from '@/components/simple-timeline-status.model';
+import { Item } from '@/components/simple-timeline-item.model';
+import { Control } from '@/components/simple-timeline-control.model';
 
-  @Component({
+@Component({
   components: {
     timeline: SimpleTimeline
   }
 })
 export default class App extends Vue {
-  public items: IItem[] = [
+  public items: Item[] = [
     new Item(
       0,
       'calendar-alt',

@@ -1,6 +1,6 @@
-import {Component, Prop, Vue} from 'vue-property-decorator';
-import {IItem} from '@/components/simple-timeline-item.model';
-import SimpleTimelineControl from '@/components/SimpleTimelineControl.vue';
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Item } from './simple-timeline-item.model';
+import SimpleTimelineControl from './SimpleTimelineControl.vue';
 import moment from 'moment';
 
 @Component({
@@ -10,7 +10,7 @@ import moment from 'moment';
 })
 export default class SimpleTimelineItem extends Vue {
   @Prop()
-  public item!: IItem;
+  public item!: Item;
 
   @Prop()
   public dateFormat!: string;

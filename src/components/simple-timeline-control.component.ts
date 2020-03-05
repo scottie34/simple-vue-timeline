@@ -1,16 +1,16 @@
-import {Component, Prop, Vue} from 'vue-property-decorator';
-import {IControl} from '@/components/simple-timeline-control.model';
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Control } from './simple-timeline-control.model';
 
 @Component({})
 export default class SimpleTimelineControl extends Vue {
   @Prop()
-  public control!: IControl;
+  public control!: Control;
 
   @Prop()
-  public eventId!: IControl;
+  public eventId!: number;
 
   public handleClick() {
-    console.log('handleClick ' + this.control.method + ' ' + this.eventId);
-    this.$emit('timeline-' + this.control.method, { eventId: this.eventId });
+    //console.log('handleClick ' + this.control.method + ' ' + this.eventId);
+    this.$parent["$parent"].$emit('timeline-' + this.control.method, { eventId: this.eventId });
   }
 }
