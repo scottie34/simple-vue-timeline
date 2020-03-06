@@ -5,7 +5,7 @@ A timeline vue component which leverages the use of common libraries:
  * [font-awesome icons](https://fontawesome.com/) 
  * and [momentjs](https://momentjs.com/) date format.
 
-![sample](./doc/simple-vue-timeline.png)
+![sample](https://raw.githubusercontent.com/scottie34/simple-vue-timeline/master/doc/simple-vue-timeline.png)
 
 ## Getting Started
 
