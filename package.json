@@ -10,7 +10,7 @@
     "momentjs",
     "fontawesome"
   ],
-  "license": "(MIT OR Apache-2.0)",
+  "license": "MIT",
   "private": false,
   "main": "./dist/@scottie/simple-vue-timeline.common.js",
   "files": [
