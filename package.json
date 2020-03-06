@@ -1,8 +1,16 @@
 {
   "name": "simple-vue-timeline",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A timeline vue component",
   "homepage": "https://github.com/scottie34/simple-vue-timeline/",
+  "keywords": [
+    "vue",
+    "timeline",
+    "bootstrap",
+    "momentjs",
+    "fontawesome"
+  ],
+  "license": "(MIT OR Apache-2.0)",
   "private": false,
   "main": "./dist/@scottie/simple-vue-timeline.common.js",
   "files": [
