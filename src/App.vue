@@ -21,20 +21,29 @@ export default class App extends Vue {
     new Item(
       0,
       'calendar-alt',
-      Status.WARNING,
-      'title',
+      Status.DANGER,
+      'Event Title',
       [new Control('edit', 'pencil-alt'), new Control('copy', 'plus')],
       new Date(),
       'Here is the body message of item 0'
     ),
     new Item(
       1,
-      'calendar-alt',
-      Status.DANGER,
-      'title',
+      'tasks',
+      Status.INFO,
+      'Task Title',
       [new Control('edit', 'pencil-alt'), new Control('trash', 'trash')],
-      new Date(),
+      new Date(2020, 2, 2),
       'Here is the body message of item 1'
+    ),
+    new Item(
+      2,
+      'home',
+      Status.SUCCESS,
+      'Another Title',
+      [new Control('edit', 'bell')],
+      new Date(2019, 11, 4),
+      'Here is the body message of item 2'
     )
   ];
 
