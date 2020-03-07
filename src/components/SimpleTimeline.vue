@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid>
+  <b-container fluid="md">
     <timeline-item :dateFormat="dateFormat" :key="item.id" :item="item" v-for="item of items" v-on="$listeners"></timeline-item>
   </b-container>
 </template>
