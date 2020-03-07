@@ -1,7 +1,8 @@
 # simple-vue-timeline
+![CI](https://img.shields.io/travis/scottie34/simple-vue-timeline/master.svg?style=flat-square)
 ![download](https://img.shields.io/npm/dm/simple-vue-timeline.svg?style=flat-square)
 ![version](https://img.shields.io/npm/v/simple-vue-timeline.svg?style=flat-square)
-![license](https://img.shields.io/badge/license-mit-green.svg?style=flat-square)
+![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)
 
 A timeline vue component which leverages the use of common libraries:
  * [bootstrap vue components](https://bootstrap-vue.js.org/),
