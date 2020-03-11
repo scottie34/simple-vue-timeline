@@ -18,10 +18,4 @@ export default class SimpleTimelineItem extends Vue {
   get formattedDate() {
     return moment(this.item.createdDate).format(this.dateFormat);
   }
-
-  public delete() {
-    this.$emit('timeline-delete-item', this.item.id);
-  }
-
-  public edit() {}
 }

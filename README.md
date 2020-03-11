@@ -9,13 +9,88 @@ A timeline vue component which leverages the use of common libraries:
  * [font-awesome icons](https://fontawesome.com/) 
  * and [momentjs](https://momentjs.com/) date format.
 
+Please use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you encountered or to give me some feedbacks of your usage.
+
+If you find it useful, give it a star. 
+
 ![sample](https://raw.githubusercontent.com/scottie34/simple-vue-timeline/master/doc/simple-vue-timeline.png)
+
 
 ## Getting Started
 
 ```
 npm install --save simple-vue-timeline
 ```
+
+As bootstrap is used, you must add the vendor.css style in the project using this component.
+
+Refer to the `Vue Class Component Sample` section below for a complete sample.
+
+### Template Element
+Add the element as follow:
+```vue
+<timeline :items="items" dateFormat="YY/MM/DD" @timeline-edit="edit" v-on="$listeners"></timeline>
+```
+
+## Props
+| Name | Type | Description |
+| --- | --- | --- |
+| `items` | `Item[]` | An item array containing your timeline items |
+| `dateformat` | `string` | The [momentjs](https://momentjs.com/) pattern to use to format date |
+| `v-on` | `Listener[]` | This one must be set to `$listeners` to be able to react on event emitted by Control (see Controls below) |
+| `@timeline-<xxx>` | `string` | The method to be called to react on `<xxx>` events (see Controls below) |
+
+## items
+Component expects an array of Items
+
+| Variable | Type | Description |
+| --- | --- | --- |
+| `id` | `number` | An unique id for your Item |
+| `icon` | `string` | The id of the `fontawesome` icon to use |
+| `status` | `Status` | A field of the Status enum related to [bootstrap color variant](https://bootstrap-vue.js.org/docs/reference/color-variants/#base-variants) (used for icon and card). |
+| `title` | `string` | The Item title |
+| `controls` | `Control[]` | An array of control for this Item (see Controls below) |
+| `createdDate` | `Date` | Date of your Item (`dateFormat` used to format it) |
+| `body` | `string` | The Item content |
+
+## Controls
+It allows to add buttons on your Item.
+
+| Variable | Type | Description |
+| --- | --- | --- |
+| `method` | `string` | A method name used when emitting events |
+| `icon` | `string` | The id of the `fontawesome` icon to use |
+
+### Event
+On button click, an event is emitting using the identifier `timeline-{{method}}`.
+
+Events are emitted with the following object as parameter 
+```vue
+{ eventId: this.eventId }
+```
+ (`this.eventId` matches the id of the Item).
+
+#### Example
+For instance adding the following control 
+```vue
+new Control("edit", "pencil-alt")
+```
+will generate `timeline-edit` event.
+
+To react on such event, one should provide:
+ * the following prop to the timeline component: 
+ ```vue
+ @timeline-edit="edit"`
+```
+
+ * the associated `edit` method which will be called 
+```vue 
+public edit(e: any) {
+    console.log("edit " + e["eventId"]);
+}
+```
+
+## Vue Class Component Sample
 
 ```vue
 <template>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <timeline :items="items" @timeline-edit="edit" @timeline-copy="copy" @timeline-trash="trash" v-on="$listeners"></timeline>
+    <timeline :items="items" dateFormat="YY/MM/DD" @timeline-edit="edit" @timeline-copy="copy" @timeline-trash="trash" v-on="$listeners"></timeline>
   </div>
 </template>
 
