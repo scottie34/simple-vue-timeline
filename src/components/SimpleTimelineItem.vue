@@ -6,7 +6,7 @@
     <b-col cols="1" sm="1" lg="1">
       <div class="timeline h-100">
         <h3 class="h-100 d-flex justify-content-center">
-          <div class="badge badge-pill align-self-center" :class="'badge-' + item.status">
+          <div class="timeline-icon badge badge-pill align-self-center" :class="'badge-' + item.status">
             <font-awesome-icon :icon="item.icon" />
           </div>
         </h3>

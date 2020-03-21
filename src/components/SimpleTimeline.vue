@@ -7,17 +7,19 @@
 <style lang="scss">
 .timeline {
   position: relative;
-
-  &:before {
-    background-color: #eee;
-    bottom: 0;
-    content: '';
-    margin-left: -2px;
-    position: absolute;
-    top: 0;
-    width: 4px;
-    z-index: -1;
-    height: 100%;
-  }
+}
+.timeline:before {
+  background-color: #eee;
+  bottom: 0;
+  content: '';
+  margin-left: -2px;
+  position: absolute;
+  top: 0;
+  width: 4px;
+  z-index: 1;
+  height: 100%;
+}
+.timeline-icon {
+  z-index: 2;
 }
 </style>
