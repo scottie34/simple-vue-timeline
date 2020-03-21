@@ -16,7 +16,7 @@
   ],
   "license": "MIT",
   "private": false,
-  "main": "./dist/@scottie/simple-vue-timeline.common.js",
+  "main": "./dist/simple-vue-timeline.common.js",
   "files": [
     "dist/*",
     "src/*",

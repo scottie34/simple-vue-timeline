@@ -7,4 +7,4 @@ import { Control } from './src/components/simple-timeline-control.model';
 
 export { SimpleTimeline, SimpleTimelineItem, SimpleTimelineControl, Status, Item, Control };
 
-declare module '@scottie/simple-vue-timeline';
+declare module 'simple-vue-timeline';
