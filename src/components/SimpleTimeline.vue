@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid="md">
+  <b-container fluid="md" class="timeline-container">
     <timeline-item :dateFormat="dateFormat" :key="item.id" :item="item" v-for="item of items" v-on="$listeners"></timeline-item>
   </b-container>
 </template>
@@ -21,5 +21,8 @@
 }
 .timeline-icon {
   z-index: 2;
+}
+.timeline-container {
+  text-align: center;
 }
 </style>

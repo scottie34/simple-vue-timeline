@@ -1,6 +1,13 @@
 <template>
-  <div id="app">
-    <timeline :items="items" dateFormat="YY/MM/DD" @timeline-edit="edit" @timeline-copy="copy" @timeline-trash="trash" v-on="$listeners"></timeline>
+  <div>
+    <timeline
+      :items="items"
+      dateFormat="YY/MM/DD"
+      @timeline-edit="edit"
+      @timeline-copy="copy"
+      @timeline-trash="trash"
+      v-on="$listeners"
+    ></timeline>
   </div>
 </template>
 
@@ -64,14 +71,3 @@ export default class App extends Vue {
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
