@@ -55,6 +55,7 @@ export default class ...
 Refer to the `Vue Class Component Sample` section below for a complete sample.
 
 ## Props
+
 | Name | Type | Description |
 | --- | --- | --- |
 | `items` | `Item[]` | An item array containing your timeline items |

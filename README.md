@@ -54,63 +54,7 @@ export default class ...
 ```
 Refer to the `Vue Class Component Sample` section below for a complete sample.
 
-## Props
-| Name | Type | Description |
-| --- | --- | --- |
-| `items` | `Item[]` | An item array containing your timeline items |
-| `dateformat` | `string` | The [fecha](https://github.com/taylorhakes/fecha) pattern to use to format date |
-| `v-on` | `Listener[]` | This one must be set to `$listeners` to be able to react on event emitted by Control (see Controls below) |
-| `@timeline-<xxx>` | `string` | The method to be called to react on `<xxx>` events (see Controls below) |
-
-## items
-Component expects an array of Items
-
-| Variable | Type | Description |
-| --- | --- | --- |
-| `id` | `number` | An unique id for your Item |
-| `icon` | `string` | The id of the `fontawesome` icon to use |
-| `status` | `Status` | A field of the Status enum related to [bootstrap color variant](https://bootstrap-vue.js.org/docs/reference/color-variants/#base-variants) (used for icon and card). |
-| `title` | `string` | The Item title |
-| `controls` | `Control[]` | An array of control for this Item (see Controls below) |
-| `createdDate` | `Date` | Date of your Item (`dateFormat` used to format it) |
-| `body` | `string` | The Item content |
-
-## Controls
-It allows to add buttons on your Item.
-
-| Variable | Type | Description |
-| --- | --- | --- |
-| `method` | `string` | A method name used when emitting events |
-| `icon` | `string` | The id of the `fontawesome` icon to use |
-
-### Event
-On button click, an event is emitting using the identifier `timeline-{{method}}`.
-
-Events are emitted with the following object as parameter 
-```vue
-{ eventId: this.eventId }
-```
- (`this.eventId` matches the id of the Item).
-
-#### Example
-For instance adding the following control 
-```vue
-new Control("edit", "pencil-alt")
-```
-will generate `timeline-edit` event.
-
-To react on such event, one should provide:
- * the following prop to the timeline component: 
- ```vue
- @timeline-edit="edit"`
-```
-
- * the associated `edit` method which will be called 
-```vue 
-public edit(e: any) {
-    console.log("edit " + e["eventId"]);
-}
-```
+Refer to the [documentation](https://scottie34.github.io/simple-vue-timeline/) for further details.
 
 ## Vue Class Component Sample
 
