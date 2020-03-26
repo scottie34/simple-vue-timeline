@@ -13,7 +13,7 @@ Please use [github](https://github.com/scottie34/simple-vue-timeline) for any is
 
 If you find it useful, give it a star. 
 
-![sample](https://raw.githubusercontent.com/scottie34/simple-vue-timeline/master/doc/simple-vue-timeline.png)
+![sample](https://raw.githubusercontent.com/scottie34/simple-vue-timeline/master/docs/simple-vue-timeline.png)
 
 
 ## Getting Started
