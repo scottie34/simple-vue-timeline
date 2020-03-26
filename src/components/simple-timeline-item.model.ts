@@ -2,23 +2,15 @@ import { Control } from './simple-timeline-control.model';
 import { Status } from './simple-timeline-status.model';
 
 export class Item {
-  id?: number | undefined;
-  icon?: string | undefined;
-  status?: Status | undefined;
-  title?: string | undefined;
-  controls?: Control[] | undefined;
-  createdDate?: Date | undefined;
-  body?: string | undefined;
+  id: number;
+  icon: string;
+  status: Status;
+  title: string;
+  controls: Control[];
+  createdDate: Date;
+  body: string;
 
-  constructor(
-    id?: number | undefined,
-    icon?: string | undefined,
-    status?: Status | undefined,
-    title?: string | undefined,
-    controls?: Control[] | undefined,
-    createdDate?: Date | undefined,
-    body?: string | undefined
-  ) {
+  constructor(id: number, icon: string, status: Status, title: string, controls: Control[], createdDate: Date, body: string) {
     this.id = id;
     this.icon = icon;
     this.status = status;

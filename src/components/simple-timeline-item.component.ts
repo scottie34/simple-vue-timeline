@@ -1,7 +1,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { Item } from './simple-timeline-item.model';
 import SimpleTimelineControl from './SimpleTimelineControl.vue';
-import moment from 'moment';
+import { format } from 'fecha';
 
 @Component({
   components: {
@@ -16,6 +16,6 @@ export default class SimpleTimelineItem extends Vue {
   public dateFormat!: string;
 
   get formattedDate() {
-    return moment(this.item.createdDate).format(this.dateFormat);
+    return format(this.item.createdDate, this.dateFormat);
   }
 }

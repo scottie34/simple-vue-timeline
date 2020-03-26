@@ -7,7 +7,7 @@
 A timeline vue component which leverages the use of common libraries:
  * [bootstrap vue components](https://bootstrap-vue.js.org/),
  * [font-awesome icons](https://fontawesome.com/) 
- * and [momentjs](https://momentjs.com/) date format.
+ * and [fecha](https://github.com/taylorhakes/fecha) date formatting.
 
 Please use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you encountered or to give me some feedbacks of your usage.
 
@@ -18,25 +18,47 @@ If you find it useful, give it a star.
 
 ## Getting Started
 
+### Installation
 ```
 npm install --save simple-vue-timeline
 ```
 
-As bootstrap is used, you must add the vendor.css style in the project using this component.
+### Style
+```ts
+@import '~simple-vue-timeline/dist/simple-vue-timeline';
+```
 
-Refer to the `Vue Class Component Sample` section below for a complete sample.
+As bootstrap is used, you must add the bootstrap style:
+```ts
+@import '~bootstrap/scss/bootstrap';
+```
 
 ### Template Element
 Add the element as follow:
+
+`template`
 ```vue
 <timeline :items="items" dateFormat="YY/MM/DD" @timeline-edit="edit" v-on="$listeners"></timeline>
 ```
+
+`script`
+```ts
+import { SimpleTimeline, Item, Control, Status } from 'simple-vue-timeline';
+
+@Component({
+  components: {
+    timeline: SimpleTimeline
+  }
+})
+export default class ...
+```
+Refer to the `Vue Class Component Sample` section below for a complete sample.
 
 ## Props
 | Name | Type | Description |
 | --- | --- | --- |
 | `items` | `Item[]` | An item array containing your timeline items |
-| `dateformat` | `string` | The [momentjs](https://momentjs.com/) pattern to use to format date |
+| `dateformat` | `string` | The [fecha](https://github.com/taylorhakes/fecha) pattern to use to format date |
 | `v-on` | `Listener[]` | This one must be set to `$listeners` to be able to react on event emitted by Control (see Controls below) |
 | `@timeline-<xxx>` | `string` | The method to be called to react on `<xxx>` events (see Controls below) |
 
