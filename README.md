@@ -9,7 +9,7 @@ A timeline vue component which leverages the use of common libraries:
  * [font-awesome icons](https://fontawesome.com/) 
  * and [fecha](https://github.com/taylorhakes/fecha) date formatting.
 
-Use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you encountered or to give me some feedbacks of your usage.
+Use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you encountered or to give me some feedback of your usage.
 
 If you find it useful, give it a star and please consider [buying me a coffee](https://cdn.buymeacoffee.com/buttons/default-green.png).
 
