@@ -9,9 +9,11 @@ A timeline vue component which leverages the use of common libraries:
  * [font-awesome icons](https://fontawesome.com/) 
  * and [fecha](https://github.com/taylorhakes/fecha) date formatting.
 
-Please use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you encountered or to give me some feedbacks of your usage.
+Use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you encountered or to give me some feedbacks of your usage.
 
 If you find it useful, give it a star. 
+
+Refer to the [documentation](https://scottie34.github.io/simple-vue-timeline/) for further details.
 
 ![sample](https://raw.githubusercontent.com/scottie34/simple-vue-timeline/master/docs/simple-vue-timeline.png)
 
@@ -52,9 +54,8 @@ import { SimpleTimeline, Item, Control, Status } from 'simple-vue-timeline';
 })
 export default class ...
 ```
-Refer to the `Vue Class Component Sample` section below for a complete sample.
 
-Refer to the [documentation](https://scottie34.github.io/simple-vue-timeline/) for further details.
+Refer to the `Vue Class Component Sample` section below for a complete sample.
 
 ## Vue Class Component Sample
 
