@@ -11,10 +11,11 @@ A timeline vue component which leverages the use of common libraries:
 
 Please use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you encountered or to give me some feedbacks of your usage.
 
-If you find it useful, give it a star. 
+If you find it useful, give it a star and please consider [buying me a coffee](https://www.buymeacoffee.com/scottie34).
 
 ![sample](https://raw.githubusercontent.com/scottie34/simple-vue-timeline/master/docs/simple-vue-timeline.png)
 
+* TOC {:toc}
 
 ## Getting Started
 

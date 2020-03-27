@@ -3,3 +3,4 @@ title: simple-vue-timeline
 description: A simple and customizable timeline vue component
 show_downloads: true
 google_analytics: UA-162059172-1
+markdown: kramdown
