@@ -6,14 +6,14 @@
 
 A timeline vue component which leverages the use of common libraries:
  * [bootstrap vue components](https://bootstrap-vue.js.org/),
- * [font-awesome icons](https://fontawesome.com/) 
+ * [vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome) 
  * and [fecha](https://github.com/taylorhakes/fecha) date formatting.
 
-Use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you encountered or to give me some feedback of your usage.
-
-If you find it useful, give it a star and please consider [buying me a coffee](https://cdn.buymeacoffee.com/buttons/default-green.png).
+If you find it useful, give it a [star](https://github.com/scottie34/simple-vue-timeline) and please consider [buying me a coffee](https://www.buymeacoffee.com/scottie34).
 
 Refer to the [documentation](https://scottie34.github.io/simple-vue-timeline/) for further details.
+
+Use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you encountered or to give me some feedback of your usage.
 
 ![sample](https://raw.githubusercontent.com/scottie34/simple-vue-timeline/master/docs/simple-vue-timeline.png)
 
@@ -34,6 +34,9 @@ As bootstrap is used, you must add the bootstrap style:
 ```ts
 @import '~bootstrap/scss/bootstrap';
 ```
+
+### Font Awesome
+Refer to [vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome#usage) documentation.  
 
 ### Template Element
 Add the element as follow:
@@ -114,51 +117,12 @@ export default class App extends Vue {
 
   public copy(e: any) {
     console.log("copy " + e["eventId"]);
-    const item: Item = this.items.find(item => item.id == e["eventId"]) as Item;
-    const clone = new Item(
-      this.items.length,
-      item.icon,
-      item.status,
-      item.title,
-      item.controls,
-      item.createdDate,
-      item.body
-    );
-    this.items.push(clone);
   }
 
   public trash(e: any) {
     console.log("trash " + e["eventId"]);
-    this.items.pop();
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-.timeline {
-  position: relative;
-
-  &:before {
-    background-color: #eee;
-    bottom: 0;
-    content: "";
-    margin-left: -2px;
-    position: absolute;
-    top: 0;
-    width: 4px;
-    z-index: -1;
-    height: 100%;
-  }
-}
-</style>
 ```
 
