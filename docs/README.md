@@ -91,7 +91,7 @@ It allows to add buttons on your Item.
 | `icon` | `string` | The id of the `fontawesome` icon to use |
 
 ### Event
-On button click, an event is emitting using the identifier `timeline-{{method}}`.
+On button click, an event is emitting using the identifier `timeline-<method>`.
 
 Events are emitted with the following object as parameter 
 ```vue
