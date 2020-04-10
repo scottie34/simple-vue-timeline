@@ -1,8 +1,8 @@
 export class Control {
-  method?: string | undefined;
-  icon?: string | undefined;
+  method: string;
+  icon: string;
 
-  constructor(method?: string | undefined, icon?: string | undefined) {
+  constructor(method: string, icon: string) {
     this.method = method;
     this.icon = icon;
   }

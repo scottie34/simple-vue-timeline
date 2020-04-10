@@ -1,20 +1,15 @@
 {
   "name": "simple-vue-timeline",
   "version": "1.11.0",
-  "description": "A timeline vue component",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/scottie34/simple-vue-timeline.git"
-  },
-  "homepage": "https://scottie34.github.io/simple-vue-timeline/",
-  "keywords": [
-    "vue",
-    "timeline",
-    "bootstrap",
-    "fontawesome"
-  ],
-  "license": "MIT",
   "private": false,
+  "description": "A timeline vue component",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build-bundle": "vue-cli-service build --target lib --name simple-vue-timeline ./src/components/index.js --mode production",
+    "test:unit": "vue-cli-service test:unit"
+  },
   "main": "./dist/simple-vue-timeline.common.js",
   "files": [
     "dist/*",
@@ -24,12 +19,6 @@
     "*.js",
     "*.ts"
   ],
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "build-bundle": "vue-cli-service build --target lib --name simple-vue-timeline ./src/components/index.js --mode production"
-  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
@@ -45,12 +34,15 @@
   },
   "devDependencies": {
     "@babel/polyfill": "^7.8.7",
+    "@types/jest": "^24.0.19",
     "@vue/cli-plugin-babel": "^3.12.1",
     "@vue/cli-plugin-eslint": "^3.12.1",
     "@vue/cli-plugin-typescript": "^3.12.1",
+    "@vue/cli-plugin-unit-jest": "^4.3.1",
     "@vue/cli-service": "^3.12.1",
     "@vue/eslint-config-prettier": "^5.1.0",
     "@vue/eslint-config-typescript": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.31",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^4.4.1",
     "eslint": "^5.16.0",
@@ -67,6 +59,14 @@
     "vue-cli-plugin-bootstrap-vue": "^0.4.0",
     "vue-template-compiler": "^2.6.11"
   },
+  "homepage": "https://scottie34.github.io/simple-vue-timeline/",
+  "keywords": [
+    "vue",
+    "timeline",
+    "bootstrap",
+    "fontawesome"
+  ],
+  "license": "MIT",
   "lint-staged": {
     "*.{js,vue,ts}": [
       "vue-cli-service lint",
@@ -76,5 +76,9 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scottie34/simple-vue-timeline.git"
   }
 }
