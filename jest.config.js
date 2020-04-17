@@ -2,12 +2,16 @@ module.exports = {
   preset: '@vue/cli-plugin-unit-jest/presets/typescript-and-babel',
   collectCoverage: true,
   collectCoverageFrom: [
-    'src/**/*.{vue, ts}',
+    'src/**/*.{vue,ts}',
+    '!src/**/*.d.ts',
+    '!src/App.vue',
+    '!src/demo.ts',
+    '!src/config/**',
     '!**/node_modules/**',
-    '!<rootDir>/dist/**',
-    '!<rootDir>/src/plugins/**',
-    '!<rootDir>/src/config/**',
-    '!<rootDir>/tests/unit/**'
+    '!dist/**',
+    '!src/plugins/**',
+    '!src/config/**',
+    '!tests/unit/**'
   ],
   coverageReporters: ['lcov', 'text-summary']
 };

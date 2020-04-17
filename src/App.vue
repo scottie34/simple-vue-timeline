@@ -1,28 +1,22 @@
 <template>
   <div>
-    <timeline
+    <simple-timeline
       :items="items"
       dateFormat="YY/MM/DD"
       @timeline-edit="edit"
       @timeline-copy="copy"
       @timeline-trash="trash"
       v-on="$listeners"
-    ></timeline>
+    ></simple-timeline>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import SimpleTimeline from '@/components/SimpleTimeline.vue';
+import { Vue } from 'vue-property-decorator';
 import { Status } from '@/components/simple-timeline-status.model';
 import { Item } from '@/components/simple-timeline-item.model';
 import { Control } from '@/components/simple-timeline-control.model';
 
-@Component({
-  components: {
-    timeline: SimpleTimeline
-  }
-})
 export default class App extends Vue {
   public items: Item[] = [
     new Item(

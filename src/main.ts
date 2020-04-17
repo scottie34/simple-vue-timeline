@@ -1,16 +1,22 @@
-import Vue from 'vue';
-import App from './App.vue';
-import * as config from './config/config';
-import * as bootstrapVueConfig from './config/config-bootstrap-vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import './assets/scss/vendor.scss';
+import * as components from './components';
+import { VueConstructor } from 'vue';
+import './assets/scss/simple-vue-timeline.scss';
+import { Status, Item, Control } from './components';
 
-Vue.config.productionTip = false;
+const SimpleTimelinePlugin = {
+  install(vue: VueConstructor, options = {}) {
+    for (const component in components) {
+      // @ts-ignore
+      if (vue && component && components[component]) {
+        // @ts-ignore
+        vue.component(component, components[component]);
+      }
+    }
+  }
+};
 
-config.initFortAwesome();
-bootstrapVueConfig.initBootstrapVue({ vue: Vue });
-Vue.component('font-awesome-icon', FontAwesomeIcon);
+export { SimpleTimelinePlugin, Control, Item, Status };
 
-new Vue({
-  render: h => h(App)
-}).$mount('#app');
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(SimpleTimelinePlugin);
+}
