@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/scottie34/simple-vue-timeline/compare/v1.12.0...v2.0.0) (2020-04-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* Usage declaration of bootstrap-vue and font-awesome is now the responsability of
+the project in which it is used.
+
+* use vue plugin, add test and reduce package size ([cdeb498](https://github.com/scottie34/simple-vue-timeline/commit/cdeb49821a0e214ec7563a7fb1dbfecd09ce6fa8))
+
 ## 1.12.0 (2020-04-17)
 
 
