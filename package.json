@@ -8,7 +8,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build-bundle": "vue-cli-service build --target lib --name simple-vue-timeline ./src/components/index.js --mode production",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "release": "standard-version"
   },
   "main": "./dist/simple-vue-timeline.common.js",
   "files": [
@@ -59,6 +60,7 @@
     "portal-vue": "^2.1.7",
     "prettier": "^1.19.1",
     "sass-loader": "^7.3.1",
+    "standard-version": "^7.1.0",
     "typescript": "^3.8.3",
     "vue-cli-plugin-bootstrap-vue": "^0.4.0",
     "vue-template-compiler": "^2.6.11"
