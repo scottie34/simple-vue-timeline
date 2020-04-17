@@ -4,7 +4,7 @@
 ![version](https://img.shields.io/npm/v/simple-vue-timeline.svg?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)
 
-A timeline vue component which leverages the use of common libraries:
+A simple but customizable and reactive timeline vue component which leverages the use of common libraries:
  * [bootstrap vue components](https://bootstrap-vue.js.org/),
  * [vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome) 
  * and [fecha](https://github.com/taylorhakes/fecha) date formatting.
@@ -25,37 +25,60 @@ Use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you
 npm install --save simple-vue-timeline
 ```
 
+```ts
+import { Vue } from "vue";
+import { SimpleTimelinePlugin } from 'simple-vue-timeline';
+
+Vue.use(SimpleTimelinePlugin);
+```
+
+### Declare third party libraries usage
+Since 2.x version, third party usages are no more declared by the simple-vue-timeline itself.
+It is thus your responsibility to declare them in your vue project which uses simple-vue-timeline.
+
+#### vue-fontawesome
+Refer to [vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome#usage) documentation.
+```ts
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'; 
+import { Vue } from "vue";
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+```
+
+#### bootstrap-vue
+Refer to [bootstrap-vue](https://bootstrap-vue.js.org/docs/) documentation.
+The following plugins must be declared:
+* BadgePlugin
+* ButtonPlugin
+* CardPlugin
+* LayoutPlugin
+
+```ts
+import { Vue } from "vue";
+import { BadgePlugin, ButtonPlugin, CardPlugin, LayoutPlugin } from 'bootstrap-vue';
+
+Vue.use(BadgePlugin);
+Vue.use(ButtonPlugin);
+Vue.use(CardPlugin);
+Vue.use(LayoutPlugin);
+```
+
 ### Style
 ```ts
 @import '~simple-vue-timeline/dist/simple-vue-timeline';
 ```
 
-As bootstrap is used, you must add the bootstrap style:
+You must also add the bootstrap style:
 ```ts
 @import '~bootstrap/scss/bootstrap';
 ```
 
-### Font Awesome
-Refer to [vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome#usage) documentation.  
-
 ### Template Element
-Add the element as follow:
+Add the element as follows:
 
 `template`
 ```vue
-<timeline :items="items" dateFormat="YY/MM/DD" @timeline-edit="edit" v-on="$listeners"></timeline>
-```
-
-`script`
-```ts
-import { SimpleTimeline, Item, Control, Status } from 'simple-vue-timeline';
-
-@Component({
-  components: {
-    timeline: SimpleTimeline
-  }
-})
-export default class ...
+<simple-timeline :items="items" dateFormat="YY/MM/DD" @timeline-edit="edit" v-on="$listeners"></simple-timeline>
 ```
 
 Refer to the `Vue Class Component Sample` section below for a complete sample.
@@ -64,38 +87,31 @@ Refer to the `Vue Class Component Sample` section below for a complete sample.
 
 ```vue
 <template>
-  <div id="app">
-    <timeline
+  <div>
+    <simple-timeline
       :items="items"
+      dateFormat="YY/MM/DD"
       @timeline-edit="edit"
       @timeline-copy="copy"
       @timeline-trash="trash"
       v-on="$listeners"
-    ></timeline>
+    ></simple-timeline>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import {
-  SimpleTimeline,
-  Item,
-  Control,
-  Status
-} from "simple-vue-timeline";
+import Vue from "vue";
+import { Control, Item, Status } from "simple-vue-timeline";
+import { Component } from "vue-property-decorator";
 
-@Component({
-  components: {
-    timeline: SimpleTimeline
-  }
-})
+@Component
 export default class App extends Vue {
   public items: Item[] = [
     new Item(
       0,
       "calendar-alt",
-      Status.WARNING,
-      "title",
+      Status.DANGER,
+      "Event Title",
       [new Control("edit", "pencil-alt"), new Control("copy", "plus")],
       new Date(),
       "Here is the body message of item 0"
@@ -103,11 +119,20 @@ export default class App extends Vue {
     new Item(
       1,
       "tasks",
-      Status.WARNING,
-      "title",
+      Status.INFO,
+      "Task Title",
       [new Control("edit", "pencil-alt"), new Control("trash", "trash")],
-      new Date(2019, 10, 20),
+      new Date(2020, 2, 2),
       "Here is the body message of item 1"
+    ),
+    new Item(
+      2,
+      "home",
+      Status.SUCCESS,
+      "Another Title",
+      [new Control("edit", "bell")],
+      new Date(2019, 11, 4),
+      "Here is the body message of item 2"
     )
   ];
 
@@ -117,10 +142,22 @@ export default class App extends Vue {
 
   public copy(e: any) {
     console.log("copy " + e["eventId"]);
+    const item: Item = this.items.find(item => item.id == e["eventId"]) as Item;
+    const clone = new Item(
+      this.items.length,
+      item.icon,
+      item.status,
+      item.title,
+      item.controls,
+      item.createdDate,
+      item.body
+    );
+    this.items.push(clone);
   }
 
   public trash(e: any) {
     console.log("trash " + e["eventId"]);
+    this.items.pop();
   }
 }
 </script>
