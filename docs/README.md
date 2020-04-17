@@ -21,7 +21,7 @@ Use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you
 ## Getting Started
 
 ### Installation
-```shell script
+```
 npm install --save simple-vue-timeline
 ```
 
@@ -146,7 +146,7 @@ public edit(e: any) {
 Once cloned, you can run the following commands to serve the [demo.ts](https://github.com/scottie34/simple-vue-timeline/blob/master/src/demo.ts)
 entry point.
 
-```shell script
+```shell
 npm run install
 npm run serve
 ```
