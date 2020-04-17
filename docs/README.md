@@ -21,7 +21,7 @@ Use [github](https://github.com/scottie34/simple-vue-timeline) for any issue you
 ## Getting Started
 
 ### Installation
-```
+```shell script
 npm install --save simple-vue-timeline
 ```
 
@@ -136,10 +136,43 @@ To react on such event, one should provide:
 ```
 
  * the associated `edit` method which will be called 
-```vue 
+```ts
 public edit(e: any) {
     console.log("edit " + e["eventId"]);
 }
+```
+
+## Contribute
+Once cloned, you can run the following commands to serve the [demo.ts](https://github.com/scottie34/simple-vue-timeline/blob/master/src/demo.ts)
+entry point.
+
+```shell script
+npm run install
+npm run serve
+```
+
+### Commit messages
+Commit messages must follow the [AngularJS's commit message convention](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines) also known as [conventional-changelog](https://github.com/ajoslin/conventional-changelog). 
+This repo is [commitizen-friendly](https://github.com/commitizen/cz-cli).
+
+### Local Test with npm link
+You can use [npm link](https://docs.npmjs.com/cli/link.html) to try the lib integration locally.
+
+Note that you must add a `vue.config.js` in the project using the lib with the following content
+
+```js
+const path = require("path");
+
+// npm link https://github.com/vuejs/vue-cli/issues/4271#issuecomment-585299391
+module.exports = {
+  configureWebpack: {
+    resolve: {
+      alias: {
+        vue$: path.resolve("./node_modules/vue/dist/vue.runtime.esm.js")
+      }
+    }
+  }
+};
 ```
 
 ## Vue Class Component Sample
