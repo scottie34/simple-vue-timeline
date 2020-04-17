@@ -5,8 +5,15 @@ import { Status } from '@/components/simple-timeline-status.model';
 import { Control } from '@/components/simple-timeline-control.model';
 import Vue, { VueConstructor } from 'vue';
 import { SimpleTimelinePlugin } from '@/main';
+import { BadgePlugin, ButtonPlugin, CardPlugin, LayoutPlugin } from "bootstrap-vue";
 
 const localVue: VueConstructor<Vue> = createLocalVue();
+// bootstrap
+Vue.use(BadgePlugin);
+Vue.use(ButtonPlugin);
+Vue.use(CardPlugin);
+Vue.use(LayoutPlugin);
+
 localVue.use(SimpleTimelinePlugin);
 
 describe('SimpleTimelineItem.vue', () => {
