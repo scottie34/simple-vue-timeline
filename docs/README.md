@@ -147,7 +147,7 @@ Once cloned, you can run the following commands to serve the [demo.ts](https://g
 entry point.
 
 ```shell
-npm run install
+npm install
 npm run serve
 ```
 
